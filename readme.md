@@ -1,4 +1,4 @@
-# Medusa Perl E-commerce Platform
+# Medusa E-commerce Platform
 ### Overview
 This project is built on the Medusa open-source headless commerce platform. The project consists of two parts:
 
