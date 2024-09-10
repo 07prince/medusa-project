@@ -19,7 +19,7 @@ Clone this repository to your local machine:
 
 ##### bash
 
-git clone https://github.com/07prince/medusa-perl.git
+git clone https://github.com/07prince/medusa-project.git
 
 cd medusa-perl
 
