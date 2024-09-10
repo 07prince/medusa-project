@@ -11,6 +11,7 @@ Before you begin, make sure you have the following installed:
 1. Node.js (v14 or higher)
 2. npm (comes with Node.js)
 3. Git
+4. PostgreSQL
 
 ## Project Setup
  # 1. Clone the Repository
@@ -41,7 +42,7 @@ cd medusa-perl-storefront
 npm install
 
 ## Running the Project
-1. Start the Backend
+1. Start the admin
 To start the Medusa backend server:
 
 #### bash
@@ -49,7 +50,7 @@ To start the Medusa backend server:
 cd medusa-perl
 npx @medusajs/medusa-cli develop
 
-This will start the Medusa backend on http://localhost:9000. You can access the admin panel by going to the /admin endpoint on this URL.
+This will start the Medusa backend on http://localhost:70001. You can access the admin panel by going to the /admin endpoint on this URL.
 
 2. Start the Frontend
 To start the Medusa storefront (frontend):
