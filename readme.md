@@ -47,8 +47,8 @@ To start the Medusa backend server:
 
 #### bash
 
-cd medusa-perl
-npx @medusajs/medusa-cli develop
+cd medusa-perl                                    
+npx @medusajs/medusa-cli develop                   
 
 This will start the Medusa backend on http://localhost:70001. You can access the admin panel by going to the /admin endpoint on this URL.
 
@@ -57,8 +57,8 @@ To start the Medusa storefront (frontend):
 
 #### bash
 
-cd medusa-perl-storefront
-npm run dev
+cd medusa-perl-storefront                              
+npm run dev                
 The storefront will be accessible at http://localhost:8000.
 
 ### Deployment
