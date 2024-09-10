@@ -2,7 +2,7 @@
 ### Overview
 This project is built on the Medusa open-source headless commerce platform. The project consists of two parts:
 
-1.Backend: Medusa Perl backend for managing e-commerce operations.
+1.Backend: Medusa Perl backend for managing e-commerce operations.               
 2.Frontend: Medusa Perl storefront for customer-facing interactions.
 
 ## Prerequisites
