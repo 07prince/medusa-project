@@ -1,0 +1,42 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./my-medusa-store
+    ports:
+      - "9000:9000"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://prince:prince@db:5432/medusa-tPxf
+      - JWT_SECRET=something
+      - COOKIE_SECRET=something
+      - REDIS_URL=redis://redis:6379  # Added Redis environment variable
+    depends_on:
+      - db
+      - redis  # Added Redis dependency
+
+  storefront:
+    build:
+      context: ./my-medusa-store-storefront
+    ports:
+      - "8000:8000"
+    environment:
+      - NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://backend:9000
+      - NEXT_PUBLIC_BASE_URL=http://localhost:8000
+
+  db:
+    image: postgres:13
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=prince
+      - POSTGRES_PASSWORD=prince
+      - POSTGRES_DB=medusa-tPxf
+
+  redis:
+    image: redis:latest  # Using the latest Redis image
+    ports:
+      - "6379:6379"  # Expose Redis port
+
+volumes:
+  db_data:
