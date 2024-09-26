@@ -4,8 +4,8 @@ FROM node:20.17.0
 WORKDIR /usr/src/app
 
 # Copy package files first
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
+####COPY package-lock.json ./
 
 # Install dependencies
 RUN npm install
