@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  medusa-backend:
+    image: medusa-backend
+    container_name: medusa-backend
+    networks:
+      - medusa
+    environment:
+      - MEDUSA_ADMIN_CORS=http://localhost:7000
+      - MEDUSA_STORE_CORS=http://localhost:8000
+      - DATABASE_URL=postgres://postgres:prince@postgres:5432/medusa
+      - JWT_SECRET=your-jwt-secret
+      - COOKIE_SECRET=your-cookie-secret
+    ports:
+      - "9000:9000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=prince
+      - POSTGRES_DB=medusa
+    ports:
+      - "5433:5432"
+    networks:
+      - medusa
+
+networks:
+  medusa:
+    driver: bridge
